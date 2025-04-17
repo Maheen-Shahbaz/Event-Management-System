@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Political Event Menu</title>
+  <link rel="stylesheet" href="style/political.css">
+</head>
+<body>
+  <h1>Select Your Political Event Menu:</h1>
+
+  <div id="menuOptions">
+    <label class="menu-item">
+      <img src="assets/refreshment.jpg" alt="Refreshment">
+      <div class="caption">
+        <input type="checkbox" name="food" value="Refreshment"> Refreshment
+      </div>
+    </label>
+    <label class="menu-item">
+      <img src="assets/tea.jpg" alt="Tea">
+      <div class="caption">
+        <input type="checkbox" name="food" value="Tea"> Tea
+      </div>
+    </label>
+    <label class="menu-item">
+      <img src="assets/coffee.jpg" alt="Coffee">
+      <div class="caption">
+        <input type="checkbox" name="food" value="Coffee"> Coffee
+      </div>
+    </label>
+    <label class="menu-item">
+      <img src="assets/cake.jpg" alt="Cake">
+      <div class="caption">
+        <input type="checkbox" name="food" value="Cake"> Cake
+      </div>
+    </label>
+  </div>
+
+  <div class="nav-buttons">
+    <button class="save" onclick="saveSelection()">Save</button>
+    <button class="home" onclick="goHome()">Return to Home</button>
+  </div>
+
+  <script>
+    function saveSelection() {
+      const selectedFoods = Array.from(
+        document.querySelectorAll('input[name="food"]:checked')
+      ).map(item => item.value);
+      if (selectedFoods.length > 0) {
+        alert("Your selection has been saved: " + selectedFoods.join(", "));
+      } else {
+        alert("Please select at least one option before saving.");
+      }
+    }
+
+    function goHome() {
+      window.location.href = "basic.html";
+    }
+  </script>
+</body>
+</html>

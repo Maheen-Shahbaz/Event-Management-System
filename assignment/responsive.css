@@ -1,0 +1,26 @@
+  /* Adjustments for smaller screens */
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 1.5rem;
+    }
+  
+    /* Stack buttons vertically on smaller screens */
+    .nav-buttons {
+      flex-direction: column;
+      align-items: center;
+      bottom: 10px;
+    }
+  
+    button {
+      width: 90%; /* Take up most of the width on small screens */
+      max-width: 100%; /* Remove the maximum width on small screens */
+    }
+  }
+  
+  /* Adjustments for mobile screens */
+  @media (max-width: 480px) {
+    h1 {
+      font-size: 1.2rem;
+    }
+  }
+  

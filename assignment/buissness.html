@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Business Event Menu</title>
+  <link rel="stylesheet" href="style/business.css">
+</head>
+<body>
+  <h1>Select Your Business Event Menu:</h1>
+
+  <div id="menuOptions">
+    <div class="menu-item">
+      <img src="assets/refreshment.jpg" alt="Refreshment">
+      <div class="caption">Refreshment</div>
+      <input type="checkbox" name="food" value="Refreshment">
+    </div>
+
+    <div class="menu-item">
+      <img src="assets/tea.jpg" alt="Tea">
+      <div class="caption">Tea</div>
+      <input type="checkbox" name="food" value="Tea">
+    </div>
+
+    <div class="menu-item">
+      <img src="assets/coffee.jpg" alt="Coffee">
+      <div class="caption">Coffee</div>
+      <input type="checkbox" name="food" value="Coffee">
+    </div>
+
+    <div class="menu-item">
+      <img src="assets/brownies.jpg" alt="Brownies">
+      <div class="caption">Brownies</div>
+      <input type="checkbox" name="food" value="Brownies">
+    </div>
+
+    <div class="menu-item">
+      <img src="assets/lemonade.jpg" alt="Lemonade">
+      <div class="caption">Lemonade</div>
+      <input type="checkbox" name="food" value="Lemonade">
+    </div>
+
+    <div class="menu-item">
+      <img src="assets/snacks.jpg" alt="Snacks">
+      <div class="caption">Snacks</div>
+      <input type="checkbox" name="food" value="Snacks">
+    </div>
+  </div>
+
+  <div class="nav-buttons">
+    <button class="save" onclick="saveSelection()">Save</button>
+    <button class="home" onclick="goHome()">Return to Home</button>
+  </div>
+
+  <script>
+    function saveSelection() {
+      const selectedFoods = Array.from(
+        document.querySelectorAll('input[name="food"]:checked')
+      ).map(item => item.value);
+      if (selectedFoods.length > 0) {
+        alert("Your selection has been saved: " + selectedFoods.join(", "));
+      } else {
+        alert("Please select at least one option before saving.");
+      }
+    }
+
+    function goHome() {
+      window.location.href = "basic.html";
+    }
+  </script>
+</body>
+</html>

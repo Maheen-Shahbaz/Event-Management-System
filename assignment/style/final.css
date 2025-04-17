@@ -1,0 +1,65 @@
+
+body {
+  background-color: #f2f2f2;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+header {
+  background-color: purple;
+  color: white;
+  padding: 20px 0;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 28px;
+}
+
+.logout-container {
+  background-color: #f5e9ff; /* light purple background */
+  border-radius: 15px;
+  padding: 40px 20px;
+  margin: 100px auto 30px;
+  max-width: 600px;
+  box-shadow: 0 4px 8px rgba(128, 0, 128, 0.2);
+}
+
+.logout-container h2 {
+  color: purple;
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.logout-container p {
+  color: #333;
+  font-size: 16px;
+}
+
+.button-container {
+  margin-top: 25px;
+}
+
+.button-container button {
+  background-color: purple;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button-container button:hover {
+  background-color: #6a1b9a; /* darker purple */
+}
+
+footer {
+  margin-top: 60px;
+  padding: 15px;
+  font-weight: bold;
+  color: purple;
+}

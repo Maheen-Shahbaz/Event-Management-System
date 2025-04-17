@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Food and Drinks Menu</title>
+  <link rel="stylesheet" href="responsive.css">
+  <link rel="stylesheet" href="style/birthday.css">
+</head>
+<body>
+  <h1>Select Your Favorite Food or Drink:</h1>
+
+  <!-- Checkbox Options with Images -->
+  <div id="menuOptions">
+    <label class="menu-item">
+      <img src="assets/cake.jpg" alt="Cake">
+      <input type="checkbox" name="food" value="cake"> Cake
+    </label>
+    <label class="menu-item">
+      <img src="assets/brownies.jpg" alt="Brownies">
+      <input type="checkbox" name="food" value="brownies"> Brownies
+    </label>
+    <label class="menu-item">
+      <img src="assets/macaroni.jpg" alt="Macaroni">
+      <input type="checkbox" name="food" value="macaroni"> Macaroni
+    </label>
+    <label class="menu-item">
+      <img src="assets/pasta.jpg" alt="Pasta">
+      <input type="checkbox" name="food" value="pasta"> Pasta
+    </label>
+    <label class="menu-item">
+      <img src="assets/lemonade.jpg" alt="Lemonade">
+      <input type="checkbox" name="food" value="lemonade"> Lemonade
+    </label>
+    <label class="menu-item">
+      <img src="assets/cold drink.jpg" alt="Cold Drinks">
+      <input type="checkbox" name="food" value="colddrinks"> Cold Drinks
+    </label>
+  </div>
+
+  <!-- Navigation Buttons -->
+  <div class="nav-buttons">
+    <button class="save" onclick="saveSelection()">Save</button>
+    <button class="home" onclick="goHome()">Return to Home</button>
+  </div>
+
+  <script>
+    // Save selected options
+    function saveSelection() {
+      const selectedFoods = Array.from(
+        document.querySelectorAll('input[name="food"]:checked')
+      ).map(item => item.value);
+      if (selectedFoods.length > 0) {
+        alert("Your selection has been saved: " + selectedFoods.join(", "));
+      } else {
+        alert("Please select at least one option before saving.");
+      }
+    }
+
+    // Redirect to the home page
+    function goHome() {
+      window.location.href = "basic.html"; // Replace 'basic.html' with the actual home page file name
+    }
+  </script>
+</body>
+</html>
+

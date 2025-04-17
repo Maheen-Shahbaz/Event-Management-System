@@ -1,0 +1,104 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Event Management System</title>
+    <link rel="stylesheet" href="style/style.css">
+</head>
+
+<body>
+    <header>
+        Welcome to the Event Mnanagement System
+    </header>
+
+    <div class="Events-container">
+        <div class="Events-options">
+            <h2>Please select your choices</h2>
+            <div class="Events-icons">
+                <div>
+                    <img src="assets/birthday.jpg" alt="Birthday">
+                    <a href="birthday.html">
+                        <button>Birthday</button>
+                    </a>
+                </div>
+                <div>
+                    <img src="assets/wedding.jpg" alt="Wedding">
+                    <a href="wedding.html">
+                        <button>Wedding</button>
+                    </a>
+                </div>
+                <div>
+                    <img src="assets/buissness.jpg" alt="Business">
+                    <a href="buissness.html">
+                        <button>Business</button>
+                    </a>
+                </div>
+                <div>
+                    <img src="assets/political.jpg" alt="Political">
+                    <a href="political.html">
+                        <button>Political</button>
+                    </a>
+                </div>
+                <div>
+                    <img src="assets/logout.png" alt="Logout">
+                    <a href="final.html">
+                        <button>Logout</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <aside class="edit-container">
+            <h3>Event Registration Form</h3>
+            <div class="edit-fields">
+                Events#: <input type="text" id="n1" placeholder="Type of Event" disabled>
+                Name: <input type="text" id="n2" placeholder="Name" disabled>
+                Email: <input type="email" id="n3" placeholder="ABcd@gmail.com" disabled>
+                Contact No: <input type="text" id="n4" placeholder="+*" disabled>
+                Event Date: <input type="date" id="n5" min="" disabled>
+                <button id="editBtn" onclick="handleEdit()">Edit</button>
+                <button id="saveBtn" onclick="handleSave()" style="display: none;">Save</button>
+            </div>
+        </aside>
+    </div>
+
+    <script>
+        const editFields = document.querySelectorAll(".edit-fields input");
+        const saveButton = document.getElementById("saveBtn");
+        const editButton = document.getElementById("editBtn");
+        const dateInput = document.getElementById("n5");
+
+        // Set today's date as minimum
+        window.onload = function () {
+            const today = new Date().toISOString().split("T")[0];
+            dateInput.min = today;
+        };
+
+        function handleEdit() {
+            editFields.forEach(field => field.disabled = false);
+            saveButton.style.display = "block";
+            editButton.style.display = "none";
+        }
+
+        function handleSave() {
+            const eventDate = document.getElementById("n5").value;
+            if (eventDate === "") {
+                alert("Please select an event date before saving.");
+                return;
+            }
+
+            editFields.forEach(field => field.disabled = true);
+            saveButton.style.display = "none";
+            editButton.style.display = "block";
+            alert("Information saved successfully!\nEvent Date: " + eventDate);
+        }
+    </script>
+
+    <footer>
+        www.Ems.com
+    </footer>
+</body>
+
+</html>
