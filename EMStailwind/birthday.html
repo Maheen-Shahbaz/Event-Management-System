@@ -1,0 +1,78 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Food and Drinks Menu</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-r from-gray-300 to-gray-100 p-5 font-sans">
+
+  <h1 class="text-center bg-purple-900 text-white py-4 rounded-lg text-2xl mb-8">
+    Select Your Favorite Food or Drink:
+  </h1>
+
+  <!-- Checkbox Options with Images -->
+  <div class="flex flex-wrap justify-center gap-6">
+    <!-- Item Card -->
+    <label class="bg-white rounded-xl shadow-md overflow-hidden w-40 text-center transform transition-transform hover:-translate-y-1 hover:shadow-lg">
+      <img src="assets/cake.jpg" alt="Cake" class="w-full h-32 object-cover transition-transform hover:scale-105">
+      <input type="checkbox" name="food" value="cake" class="my-3 scale-110"> Cake
+    </label>
+
+    <label class="bg-white rounded-xl shadow-md overflow-hidden w-40 text-center transform transition-transform hover:-translate-y-1 hover:shadow-lg">
+      <img src="assets/brownies.jpg" alt="Brownies" class="w-full h-32 object-cover transition-transform hover:scale-105">
+      <input type="checkbox" name="food" value="brownies" class="my-3 scale-110"> Brownies
+    </label>
+
+    <label class="bg-white rounded-xl shadow-md overflow-hidden w-40 text-center transform transition-transform hover:-translate-y-1 hover:shadow-lg">
+      <img src="assets/macaroni.jpg" alt="Macaroni" class="w-full h-32 object-cover transition-transform hover:scale-105">
+      <input type="checkbox" name="food" value="macaroni" class="my-3 scale-110"> Macaroni
+    </label>
+
+    <label class="bg-white rounded-xl shadow-md overflow-hidden w-40 text-center transform transition-transform hover:-translate-y-1 hover:shadow-lg">
+      <img src="assets/pasta.jpg" alt="Pasta" class="w-full h-32 object-cover transition-transform hover:scale-105">
+      <input type="checkbox" name="food" value="pasta" class="my-3 scale-110"> Pasta
+    </label>
+
+    <label class="bg-white rounded-xl shadow-md overflow-hidden w-40 text-center transform transition-transform hover:-translate-y-1 hover:shadow-lg">
+      <img src="assets/lemonade.jpg" alt="Lemonade" class="w-full h-32 object-cover transition-transform hover:scale-105">
+      <input type="checkbox" name="food" value="lemonade" class="my-3 scale-110"> Lemonade
+    </label>
+
+    <label class="bg-white rounded-xl shadow-md overflow-hidden w-40 text-center transform transition-transform hover:-translate-y-1 hover:shadow-lg">
+      <img src="assets/cold drink.jpg" alt="Cold Drinks" class="w-full h-32 object-cover transition-transform hover:scale-105">
+      <input type="checkbox" name="food" value="colddrinks" class="my-3 scale-110"> Cold Drinks
+    </label>
+  </div>
+
+  <!-- Navigation Buttons -->
+  <div class="fixed bottom-5 right-5 flex gap-4">
+    <button onclick="saveSelection()" class="bg-indigo-600 text-white px-4 py-2 rounded-md text-lg hover:opacity-90">
+      Save
+    </button>
+    <button onclick="goHome()" class="bg-purple-900 text-white px-4 py-2 rounded-md text-lg hover:opacity-90">
+      Return to Home
+    </button>
+  </div>
+
+  <script>
+    function saveSelection() {
+      const selectedFoods = Array.from(
+        document.querySelectorAll('input[name="food"]:checked')
+      ).map(item => item.value);
+      if (selectedFoods.length > 0) {
+        alert("Your selection has been saved: " + selectedFoods.join(", "));
+      } else {
+        alert("Please select at least one option before saving.");
+      }
+    }
+
+    function goHome() {
+      window.location.href = "basic.html";
+    }
+  </script>
+</body>
+</html>
