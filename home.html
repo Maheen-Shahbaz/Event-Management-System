@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Event Management System</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="font-sans bg-white text-black">
+
+  <!-- Header -->
+  <header class="bg-purple-800 text-white px-6 py-4 flex justify-between items-end">
+    <div class="text-2xl font-bold">Event Management System</div>
+    <div class="flex gap-6 text-sm">
+      <a href="#about" class="hover:underline">About Us</a>
+      <a href="#contact" class="hover:underline">Contact Us</a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="relative w-full h-[80vh] overflow-hidden">
+    <img src="assets/background.jpg" alt="Event" class="w-full h-full object-cover" />
+    <div class="absolute inset-0 flex flex-col justify-center items-center text-white text-center">
+      <h1 class="text-3xl md:text-4xl font-bold mb-6 drop-shadow-md">Every Event Should Be Perfect</h1>
+      <a href="basic.html" class="bg-yellow-400 text-black px-6 py-3 rounded-md font-semibold hover:bg-yellow-300 transition">Get Started</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="about" class="bg-purple-800 text-white text-center py-12 px-6">
+    <div class="max-w-3xl mx-auto space-y-10">
+      <div>
+        <h3 class="text-lg font-semibold mb-2">About Us</h3>
+        <p class="text-sm leading-relaxed">
+          Welcome to the Event Management System — a simple and smart way to organize your special occasions. Whether it's a birthday, wedding, business event, or political gathering, our system helps you manage everything with ease.
+          <br /><br />
+          From planning to execution, we’re here to make sure your event is smooth, successful, and stress-free.
+        </p>
+      </div>
+      <div id="contact">
+        <h3 class="text-lg font-semibold mb-2">Contact Us</h3>
+        <p class="text-sm">Email: info@eventms.com</p>
+        <p class="text-sm">Phone: +123 456 7890</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
