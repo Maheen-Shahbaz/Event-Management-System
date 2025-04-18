@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,8 +15,6 @@
 
   <!-- Menu Items -->
   <div id="menuOptions" class="flex flex-wrap justify-center gap-6">
-    
-    <!-- Menu Item -->
     <div class="menu-item bg-white rounded-xl shadow-lg overflow-hidden w-40 text-center transition hover:-translate-y-1 hover:shadow-xl">
       <img src="assets/cake.jpg" alt="Cake" class="w-full h-32 object-cover transition-transform hover:scale-105">
       <div class="bg-purple-900 text-white text-sm px-3 py-2 rounded-b-xl">Cake</div>
@@ -53,7 +50,6 @@
       <div class="bg-purple-900 text-white text-sm px-3 py-2 rounded-b-xl">Cold Drinks</div>
       <input type="checkbox" name="food" value="Cold Drinks" class="my-2 scale-110">
     </div>
-
   </div>
 
   <!-- Buttons -->
@@ -62,21 +58,25 @@
     <button onclick="goHome()" class="bg-purple-900 hover:opacity-90 text-white px-5 py-2 rounded-md text-base">Return to Home</button>
   </div>
 
+  <!-- JavaScript -->
   <script>
     function saveSelection() {
-      const selectedFoods = Array.from(
-        document.querySelectorAll('input[name="food"]:checked')
-      ).map(item => item.value);
-      if (selectedFoods.length > 0) {
-        alert("Your selection has been saved: " + selectedFoods.join(", "));
+      const selected = [];
+      document.querySelectorAll('input[name="food"]:checked').forEach(item => {
+        selected.push(item.value);
+      });
+
+      if (selected.length === 0) {
+        alert("Please select at least one item.");
       } else {
-        alert("Please select at least one option before saving.");
+        alert("You selected: " + selected.join(", "));
       }
     }
 
     function goHome() {
-      window.location.href = "basic.html";
+      window.location.href = "basic.html"; // Update if your home page is named differently
     }
   </script>
+
 </body>
 </html>

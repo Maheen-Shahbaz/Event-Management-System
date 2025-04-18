@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -36,7 +34,11 @@
     function goToHome() {
       window.location.href = "home.html";
     }
+
+    // Function to add confirmation before leaving the page
+    window.onbeforeunload = function() {
+      return "Are you sure you want to leave?";
+    };
   </script>
 </body>
 </html>
-
